@@ -1,23 +1,39 @@
 # ember-data-date-only-transform
 
-This README outlines the details of collaborating on this Ember addon.
+This addon provides a `date-only` transform to correctly transform date fields in an API that don't include the time. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous date.
+
+Here's a quick example showing the browser quirk when parsing a date string in the browser console:
+```
+new Date('2018-04-20').toString()
+> "Thu Apr 19 2018 19:00:00 GMT-0500 (CDT)"
+```
+Notice how the browser changes the day of month from the 20th of April to the 19th.
+
+This transform takes care of the browser quirk so the day of month on the serialized date object is not the day before.
+
+This quirk only happens for people in the Western hemisphere because the browser implicitly assumes the time is 00:00:00.000Z when not provided. Then the browser applies the Time Zone adjustment so 2018-04-20T00:00:00.000Z in the Central time zone is 7 pm the day before on 4/19/2018.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-data-date-only-transform`
+```
+ember install ember-data-date-only-transform
+```
+
+## Usage
+
+```
+birthdate: DS.attr('date-only')
+```
+
+## Development
+
+* `git clone` this repository
 * `npm install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
-* `ember test --server`
+* `ember try:each` to test against multiple Ember versions
 
 ## Building
 
