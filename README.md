@@ -2,7 +2,7 @@
 [![npm Version][npm-badge]][npm]
 [![Build Status][travis-badge]][travis]
 
-This addon provides a `date-only` transform to correctly transform date fields in an API that don't include the time. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous date.
+This addon provides a `date-only` transform for API fields that only include the date and no time info. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous date.
 
 Here's a quick example showing the browser quirk when parsing a date string in the browser console:
 ```

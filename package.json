@@ -1,7 +1,7 @@
 {
   "name": "ember-data-date-only-transform",
   "version": "1.0.0",
-  "description": "Provides a `date-only` ember data transform to correctly transform date fields in an API that don't include the time.",
+  "description": "This addon provides a `date-only` transform for API fields that only include the date and no time info. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous date.",
   "keywords": [
     "ember-addon",
     "ember-data",
