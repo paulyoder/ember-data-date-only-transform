@@ -1,4 +1,6 @@
 # ember-data-date-only-transform
+[![npm Version][npm-badge]][npm]
+[![Build Status][travis-badge]][travis]
 
 This addon provides a `date-only` transform to correctly transform date fields in an API that don't include the time. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous date.
 

@@ -1,9 +1,12 @@
 {
   "name": "ember-data-date-only-transform",
   "version": "1.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Provides a `date-only` ember data transform to correctly transform date fields in an API that don't include the time.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-data",
+    "transform",
+    "date transform"
   ],
   "license": "MIT",
   "author": "",
