@@ -1,6 +1,6 @@
 {
   "name": "ember-data-date-only-transform",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This addon provides a `date-only` transform for fields that only include the date but no time info from the API. It correctly adjusts for a browser quirk where parsing a date string without time can return a Date object for the previous day.",
   "keywords": [
     "ember-addon",

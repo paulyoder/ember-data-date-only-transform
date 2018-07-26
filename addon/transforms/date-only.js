@@ -26,7 +26,11 @@ export default DS.Transform.extend({
   // Serialize's a date object into the YYYY-MM-DD format
   serialize(date) {
     if (date instanceof Date && !isNaN(date)) {
-      return date.toISOString().split('T')[0];
+      // can't use date.toISOString().split('T')[0] because it can return the previous day
+      // for people in the Eastern hemisphere
+      let month = `0${date.getMonth() + 1}`.substr(-2);
+      let day = `0${date.getDate()}`.substr(-2);
+      return `${date.getFullYear()}-${month}-${day}`;
     } else {
       return null;
     }

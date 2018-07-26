@@ -41,6 +41,6 @@ test('#serialize', function(assert) {
   assert.strictEqual(transform.serialize(undefined), null);
   assert.strictEqual(transform.serialize(new Date('invalid')), null);
 
-  let date = new Date('2015-01-01T00:00:00.000Z');
+  let date = new Date('2015-01-01T12:00:00.000Z');
   assert.equal(transform.serialize(date), '2015-01-01');
 });
